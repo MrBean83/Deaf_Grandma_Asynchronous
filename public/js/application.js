@@ -3,7 +3,8 @@ $(document).ready(function() {
     event.preventDefault();
     var user_input = $(this).serialize();
     $.post('/grandma', user_input, function(response){
-      $('body').html(response);
+      console.log(response);
+      $('#grandma-says').html(response);
     });
   })
 });
