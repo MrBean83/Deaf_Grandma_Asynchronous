@@ -1,10 +1,16 @@
 $(document).ready(function() {
-  $('form').submit(function(event) {
+  $('.grandmaform').submit(function(event) {
     event.preventDefault();
+
+    console.log("We're past event preventDefault")
+    
     var user_input = $(this).serialize();
-    $.post('/grandma', user_input, function(response){
+    console.log(user_input);
+  
+    $.post("/grandma", user_input, function(response){
       console.log(response);
-      $('#grandma-says').html(response);
+    $("#grandma-says").html(response);
+
     });
-  })
+  });
 });
